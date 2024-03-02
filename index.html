@@ -6,11 +6,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Product Filtering UI</title>
 </head>
-<body class="bg-blue-900 text-yellow-300">
-    <nav class="bg-black p-4 mb-6">
+<body class="bg-red-900 text-yellow-500">
+    <nav class="bg-black p-4 mb-6 border-b  border-yellow-500">
         <div class="container max-w-6xl mx-auto flex flex-col sm:flex-row gap-8 items-center">
             <div class="relative w-full">
-                <input type="text" id="search" class="bg-blue-700 rounded-full p-2 pl-10 transition focus:w-full" placeholder="Search Products">
+                <input type="text" id="search" class="bg-red-900 rounded-full p-2 pl-10 transition focus:w-full border border-yellow-500 focus:outline-none" placeholder="Search Products">
                 <svg
                     class="absolute left-2 top-1/2 -translate-y-1/2"
                     xmlns="http://www.w3.org/2000/svg"
@@ -28,28 +28,165 @@
                     <path d="M21 21l-6 -6" />
                 </svg>
             </div>
+            <button id="cartButton" class="relative">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                    d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"
+                    />
+                    <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
+                </svg>
+                <small id="cardCount" class="bg-red-900 text-xs text-yellow-500 w-4 h-4 absolute -top-2 -right-2 rounded-full">0</small>
+            </button>
         </div>
     </nav>
-
+    <main class="flex flex-col md:flex-row container mx-auto max-w-6xl">
+        <div class="space-y-4 p-2 w-full md:max-w-[10rem]">
+            <h2 class="text-2xl">Filters</h2>
+            <h3 class="text-xl mb-2">Category</h3>
+            <div id="filters-container" class="text-xl space-y-2">
+                <div>
+                    <input type="checkbox" class="check" id="cameras">
+                    <label for="cameras">Cameras</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="smartphones">
+                    <label for="smartphones">Smartphones</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="consoles">
+                    <label for="consoles">Consoles</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="Televisions">
+                    <label for="Televisions">Televisions</label>
+                </div>
+            </div>
+        </div>
+        <div id="products-wrapper" class="w-full max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6 place-content-center p4">
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/samsung_tv.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Samsung TV</p>
+                <strong>£949.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/nintendo_switch.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Nintendo Switch</p>
+                <strong>£239.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/sony_zv1f_camera.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Sony ZV1F Camera</p>
+                <strong>£649.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/samsung_galaxy.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Samsung Galaxy</p>
+                <strong>£899.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/canon_eos_camera.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Canon EOS Camera</p>
+                <strong>£699.99</strong>
+            </div>
+                <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/xbox_series_x.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Xbox Series X</p>
+                <strong>£349.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/lg_tv.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">LG TV</p>
+                <strong>£599.99</strong>
+            </div>    
+            
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/playstation_5.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Sony PlayStation 5</p>
+                <strong>£329.99</strong>
+            </div>            
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/google_pixel.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Google Pixel</p>
+                <strong>£549.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/toshiba_tv.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Toshiba TV</p>
+                <strong>£349.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/sony_a7_camera.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">Sony A7 Camera</p>
+                <strong>£1599.99</strong>
+            </div>
+            <div class="item space-y-2">
+                <div class="bg-yellow-500 flex justify-content relative overflow-hidden group cursor-pointer border border-4 border-black rounded-xl">
+                    <img src="/imgs/iphone_14.png" alt="" class="w-full h-full object-cover">
+                    <span class="status bg-black text-yellow-500 absolute bottom-0 left-0 right-0 text-center py-2
+                    translate-y-full transition group-hover:translate-y-0">Add to Cart</span>
+                </div>
+                <p class="text-xl">iPhone 14</p>
+                <strong>£1199.99</strong>
+            </div>
+            
+            
+        </div>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>     
-<!-- 
-<svg
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
-viewBox="0 0 24 24"
-stroke-width="2"
-stroke="currentColor"
-fill="none"
-stroke-linecap="round"
-stroke-linejoin="round"
->
-<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-<path
-  d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"
-/>
-<path d="M9 11v-5a3 3 0 0 1 6 0v5" />
-</svg>
- -->
