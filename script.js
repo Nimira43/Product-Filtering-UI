@@ -7,3 +7,12 @@ const searchInput = document.getElementById('search')
 const cartButton = document.getElementById('cartButton')
 const cartCount = document.getElementById('cartCount')
 
+let cartItemCount = 0
+
+const productsEls = []
+
+products.forEach((product) => {
+  const productEl = createProductElement(product)
+})
+
+
