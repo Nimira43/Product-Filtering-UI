@@ -31,7 +31,8 @@ function createProductElement(product) {
       >
         
         <img
-          src="./img/Nintendo-Switch.png"
+          src="${product.url}"
+          alt="${product.name}"
           class="w-full h-fill object-cover"
         >
         
@@ -46,11 +47,11 @@ function createProductElement(product) {
       <p
         class="text-xl"
       >
-        Nintendo Switch
+        ${product.name}
       </p>
       
       <strong>
-        £249
+        ${product.price.toLocaleString()}
       </strong>      
     `
 
