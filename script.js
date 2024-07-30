@@ -55,6 +55,7 @@ function createProductElement(product) {
       </strong>      
     `
 
+  return productEl
 
 }
 
