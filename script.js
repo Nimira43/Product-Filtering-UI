@@ -13,6 +13,8 @@ const productsEls = []
 
 products.forEach((product) => {
   const productEl = createProductElement(product)
+  productsEls.push(productEl)
+  productsWrapperEl.appendChild(productEl)
 })
 
 
