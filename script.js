@@ -19,5 +19,18 @@ products.forEach((product) => {
 
 function createProductElement(product) {
   const productEl = document.createElement('div')
+  productEl.className = 'item '
 }
 
+/*
+<div class="item space-y-2">
+      <div class="bg-[#fff] flex justify-center relative overflow-hidden group cursor-pointer border border-[#ff4500]">
+        <img src="./img/Nintendo-Switch.png" class="w-full h-fill object-cover">
+        <span
+          class="status bg-[#000] text-[#fff] absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition border-t border-[#ff4500] group-hover:translate-y-0">Add
+          To Cart</span>
+      </div>
+      <p class="text-xl">Nintendo Switch</p>
+      <strong>£249</strong>
+    </div>
+*/
