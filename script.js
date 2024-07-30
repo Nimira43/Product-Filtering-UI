@@ -17,4 +17,7 @@ products.forEach((product) => {
   productsWrapperEl.appendChild(productEl)
 })
 
+function createProductElement(product) {
+  const productEl = document.createElement('div')
+}
 
