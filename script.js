@@ -20,7 +20,6 @@ products.forEach((product) => {
 filtersContainer.addEventListener('change', filterProducts)
 searchInput.addEventListener('input', filterProducts)
 
-
 function createProductElement(product) {
   const productEl = document.createElement('div')
   productEl.className = 'item space-y-2'
@@ -58,8 +57,8 @@ function addToCart(e) {
   if (statusEl.classList.contains('added')) {
     statusEl.classList.remove('added')
     statusEl.innerText = 'Add to Cart'
-    statusEl.classList.add('bg-[#000]')
     statusEl.classList.remove('bg-[#d61414]')
+    statusEl.classList.add('bg-[#000]')
     cartItemCount--
   } else {
     statusEl.classList.add('added')
