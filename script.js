@@ -57,14 +57,17 @@ return productEl
 function addToCart(e) {
   const statusEl = e.target
   if (statusEl.classList.contains('added')) {
-
+    statusEl.classList.remove('added')
+    statusEl.innerText = 'Add to Cart'
+    statusEl.classList.add('bg-[#000]')
+    statusEl.classList.remove('bg-[#d61414]')
+    cartItemCount--
   } else {
     statusEl.classList.add('added')
     statusEl.innerText = 'Remove from Cart'
     statusEl.classList.remove('bg-[#000]')
     statusEl.classList.add('bg-[#d61414]')
     cartItemCount++
-
   }
   cartCount.innerText = cartItemCount.toString()
 }
