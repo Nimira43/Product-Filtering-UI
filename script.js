@@ -1,7 +1,7 @@
 import { products } from "./js/products.js"
 
 const productsWrapperEl = document.getElementById('products-wrapper')
-const checksEls = document.querySelectorAll('.check')
+const checkEls = document.querySelectorAll('.check')
 const filtersContainer = document.getElementById('filters-container')
 const searchInput = document.getElementById('search')
 const cartButton = document.getElementById('cartButton')
@@ -72,5 +72,13 @@ function addToCart(e) {
 }
 
 function filterProducts() {
-  console.log(1)
+  const searchTerm = searchInput.value.trim().toLowerCase()
+  const checkedCategories = Array
+    .from(checkEls)
+    .filter((check) => check.checked)
+    .map((check) => check.id)
+  productsEls.forEach((productEl, index) => {
+    const product = products[index]
+    
+  })
 }
