@@ -48,8 +48,23 @@ function createProductElement(product) {
         ${product.price.toLocaleString()}
       </strong>      
     `
-
-  return productEl
+  productEl.querySelector('.status').addEventListener('click', addToCart)
+  
+return productEl
 
 }
 
+function addToCart(e) {
+  const statusEl = e.target
+  if (statusEl.classList.contains('added')) {
+
+  } else {
+    statusEl.classList.add('added')
+    statusEl.innerText = 'Remove from Cart'
+    statusEl.classList.remove('bg-[#000]')
+    statusEl.classList.add('bg-[#d61414]')
+    cartItemCount++
+
+  }
+  cartCount.innerText = cartItemCount.toString()
+}
