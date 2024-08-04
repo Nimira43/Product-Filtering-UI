@@ -17,13 +17,14 @@ products.forEach((product) => {
   productsWrapperEl.appendChild(productEl)
 })
 
+filtersContainer.addEventListener('change', filterProducts)
+searchInput.addEventListener('input', filterProducts)
+
+
 function createProductElement(product) {
   const productEl = document.createElement('div')
-  
   productEl.className = 'item space-y-2'
-
   productEl.innerHTML = 
-    
     `
       <div
         class="bg-[#fff] flex justify-center relative overflow-hidden group cursor-pointer border border-[#ff4500]"
@@ -49,9 +50,7 @@ function createProductElement(product) {
       </strong>      
     `
   productEl.querySelector('.status').addEventListener('click', addToCart)
-  
-return productEl
-
+  return productEl
 }
 
 function addToCart(e) {
@@ -70,4 +69,8 @@ function addToCart(e) {
     cartItemCount++
   }
   cartCount.innerText = cartItemCount.toString()
+}
+
+function filterProducts() {
+  console.log(1)
 }
