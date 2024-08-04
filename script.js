@@ -79,6 +79,12 @@ function filterProducts() {
     .map((check) => check.id)
   productsEls.forEach((productEl, index) => {
     const product = products[index]
-    
+    const matchedSearchTerm = product.name.toLowerCase().includes(searchTerm)
+    const isInCheckedCategory = checkedCategories.length === 0 || checkedCategories.includes(product.type)
+    if (matchedSearchTerm && isInCheckedCategory) {
+      productEl.classList.remove('hidden')
+    } else {
+      productEl.classList.add('hidden')
+    }
   })
 }
